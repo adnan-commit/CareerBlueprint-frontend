@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-heading : "Plus Jakarta Sans", sans-serif; 
+  --font-body : "Inter", sans-serif;
+  --font-mono : "JetBrains Mono", monospace;
+
+/* Aurora Teal Theme */
+  --color-background: #020617;
+  --color-brand-primary: #2dd4bf;   /* Teal 400 */
+  --color-brand-secondary: #06b6d4; /* Cyan 500 */
+  --color-brand-accent: #f43f5e;    /* Rose (for error/delete) */
+}
+
+@layer base {
+  html, body {
+    background-color: #030712 !important; /* Pure Dark */
+    font-family: "Inter", sans-serif !important;
+    color: #f8fafc;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    letter-spacing: -0.02em;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden; 
+  }
+  .resume-paper, .resume-paper * {
+    visibility: visible; 
+  }
+  .resume-paper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-shadow: none !important; 
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- CUSTOM SCROLLBAR DESIGN --- */
+
+/* 1. Scrollbar Container */
+::-webkit-scrollbar {
+  width: 8px;  /* Vertical scrollbar width */
+  height: 8px; /* Horizontal scrollbar height */
+}
+
+/* 2. Track  */
+::-webkit-scrollbar-track {
+  background: #020617; /* slate-950 (Site background color) */
+}
+
+/* 3. Thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1); /* Subtle white track */
+  border-radius: 100px;
+  border: 2px solid #020617; /* Taaki gap dikhe */
+  transition: all 0.3s ease;
+}
+
+/* 4. Thumb Hover (Jab mouse upar ho) */
+::-webkit-scrollbar-thumb:hover {
+  background: #2dd4bf; /* brand-primary (Neon Cyan) */
+  box-shadow: 0 0 10px rgba(45, 212, 191, 0.5); /* Glow effect */
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) #020617;
+}
+
+/* Special Case: No Scrollbar for Sidebar/Tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
