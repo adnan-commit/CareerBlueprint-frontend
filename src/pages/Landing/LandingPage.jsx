@@ -6,8 +6,14 @@ import About from "./About";
 import CTA from "./CTA";
 import Faqs from "./Faqs";
 import Footer from "../../components/shared/Footer";
+import { useEffect } from "react";
+import api from "../../api/axios";
 
 const LandingPage = () => {
+  useEffect(() => {
+    api.get("/auth/get-me").catch(() => {});
+  }, []);
+
   return (
     <div className="relative overflow-hidden">
       {/* Background Aurora Glow Effects */}
