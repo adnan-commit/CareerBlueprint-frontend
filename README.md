@@ -158,6 +158,11 @@ A vertical timeline component that breaks down complex preparation strategies in
 
 ---
 
+## Preview
+
+![Project preview](/Client/public/og-preview.png)
+
+
 ## 👨‍💻 Author
 
 **Adnan Qureshi**
